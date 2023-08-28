@@ -1,0 +1,15 @@
+* {
+    font-family: "Noto Sans", sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+
+.logo {
+    height: 4em;
+}
+.logo-text {
+    font-size: 2em;
+}
