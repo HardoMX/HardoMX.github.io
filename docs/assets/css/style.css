@@ -1,6 +1,5 @@
 * {
     font-family: "Noto Sans", sans-serif;
-    background-color: #222222;
 }
 
 body {
@@ -8,6 +7,14 @@ body {
 }
 
 
+header {
+    display: flex;
+    column-gap: 2em;
+
+    height: 5em;
+
+    background-color: #555555;
+}
 .logo {
     display: flex;
     align-items: end;
@@ -16,17 +23,12 @@ body {
 
     height: 5em;
 
-    background-color: #555555;
+    text-decoration: none;
 }
 #logo-logo {
     height: 4em;
     padding-left: 0.5em;
     padding-bottom: 0.5em;
-
-    background-color: inherit;
-}
-.logo-text {
-    background-color: inherit;
 }
 #logo-sub {
     position: absolute;
@@ -34,10 +36,36 @@ body {
 
     font-size: 2.5em;
     color: #FFFFFF;
-    background-color: transparent;
 }
 #logo-domain {
     font-size: 2em;
     color: #FFFFFF;
-    background-color: inherit;
+}
+
+.nav {
+    font-size: 2em;
+}
+.nav ul {
+    list-style-type: none;
+}
+.list {
+    display: inline-block;
+}
+.list a{
+    text-decoration: none;
+    padding-right: 1em;
+}
+.list a::after {
+    display: inline-block;
+    content: "";
+    color: #000000;
+}
+
+
+main, footer {
+    background-color: #222222;
+    margin: 0px;
+}
+h1 {
+    margin: 0px;
 }
