@@ -67,17 +67,10 @@ h1 {
 }
 main {
     background-color: #222222;
-    height: auto;
+    height: 90vh;
 }
 main p {
     margin: 0;
-}
-.hello, .like, .bye {
-    text-align: center;
-    font-size: 10em;
-    padding-top: 55vh;
-    padding-bottom: 55vh;
-    color: #FFFFFF;
 }
 
 footer {
