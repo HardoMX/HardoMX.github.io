@@ -75,8 +75,8 @@ main p {
 .hello, .like, .bye {
     text-align: center;
     font-size: 10em;
-    padding-top: 55vh;
-    padding-bottom: 55vh;
+    padding-top: 45vh;
+    padding-bottom: 65vh;
     color: #FFFFFF;
 }
 
