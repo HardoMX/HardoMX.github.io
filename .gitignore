@@ -1,2 +1,5 @@
-docs/template.html
-docs/assets/css/template.css
+_site
+.sass-cache
+.jekyll-cache
+.jekyll-metadata
+vendor
