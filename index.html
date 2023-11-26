@@ -3,4 +3,19 @@ layout: default
 title: Home
 ---
 
-<h1>Home</h1>
+<h1>Andreas Hård</h1>
+<h2>My Portfolio</h2>
+
+<div class="links">
+    {% for item in site.data.navigation %}
+    {% if item.link != "/" %}
+    <a class="{{ item.class }} link" href="{{ item.link }}">
+        <div class="{{ item.class }}-text">
+            <h3>{{ item.name }}</h3>
+            <p>{{ item.description }}</p>
+        </div>
+        <img src="{{ item.image }}" alt="Link to {{ item.name }}">
+    </a>
+    {% endif %}
+    {% endfor %}
+</div>
