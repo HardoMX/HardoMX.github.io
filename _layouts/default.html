@@ -7,16 +7,31 @@
         <link href="/assets/css/styles.css" rel="stylesheet">
     </head>
 
-    <header>
-        {% include navigation.html %}
+    <header">
+        <div class="header">
+            <div class="title">
+                <img src="/assets/images/Hardo-pfp.png" alt="Site picture">
+                <div>Andreas</div>
+            </div>
+            <div class="nav">
+            {% include navigation.html %}
+            </div>
+        </div>
     </header>
 
     <body>
+        <div class="menu-toggler" onclick="menu()">
+            <div class="menu-line-1"></div>
+            <div class="menu-line-2"></div>
+            <div class="menu-line-3"></div>
+        </div>
         {{ content }}
     </body>
 
-    <footer>
+<footer>
         <a href="https://github.hardo.dev">GitHub</a>
         <a href="#">Contact</a>
     </footer>
+
+    <script src="/assets/js/main.js"></script>
 </html>

@@ -16,30 +16,137 @@
     }
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200&display=swap');
+
+
 
 body {
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 200;
+
+    color: var(--text);
     background-color: var(--bg);
+
+    overflow: hidden;
+    margin: 0;
 }
 
-header {
-    height: 10em
-}
-header nav a{
-    font-size: 2em;
-    color: var(--secondary);
+.header {
+    position: unset;
+    // transform: translateY(-100%);
 
+    display: flex;
+
+    justify-content: space-between;
+    padding: 1em 1em 1em 1em;
+
+    width: calc(100vw - 9em);
+
+    transition: transform 0.3s linear, height 0.3s linear;
+}
+
+.title {
+    display: flex;
+    gap: 1em;
+
+    img {
+        width: 4.5em;
+        height: 4.5em;
+        border-radius: 1em;
+    }
+
+    div {
+        font-size: 3em;
+    }
+}
+
+.nav ul {
+    list-style-type: none;
+}
+.nav-link {
+    display: inline-block;
+    padding: 0 1em 0 1em;
+    position: relative;
+
+    border-left: solid 0.05em var(--secondary);
+    border-right: solid 0.05em var(--secondary);
+
+    :hover {
+        color: var(--accent);
+    }
+
+    ::after {
+        content: '';
+
+        position: absolute;
+        bottom: 0;
+        left: 0;
+
+        width: 100%;
+        height: 0.1em;
+
+        background-color: var(--primary);
+
+        transform: scaleX(0);
+        transform-origin: bottom left;
+
+        transition: transform 0.3s ease-in-out;
+    }
+    :hover::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+    }
+}
+.nav-link a {
     text-decoration: none;
 
-    border-left: solid var(--secondary) 0.1em;
-    border-right: solid var(--secondary) 0.1em;
+    font-size: 2em;
+    font-weight: 100;
 
-    margin-left: -0.1em;
-    padding: 1em;
-}
-header nav a :hover {
-    color: var(--primary);
-    border-color: var(--primary);
+    color: var(--secondary);
 }
 .active-page {
-    color: var(--accent);
+    color: var(--primary) !important; //I really can't solve this in any other way
+}
+
+.menu-toggler {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.2em;
+}
+.menu-toggler div {
+    width: 4.5em;
+    height: 0.5em;
+
+    background-color: var(--primary);
+}
+
+@media (max-width: 600px) {
+    .header {
+        flex-direction: column;
+    }
+
+    .nav-link {
+        display: block;
+        position: relative;
+
+        border-left: none;
+        border-right: none;
+        border-bottom: solid 0.05em;
+
+        border-image-slice: 1;
+        border-image-source: linear-gradient( to right, var(--primary), var(--secondary));
+    }
+
+    .menu-toggler {
+        position: absolute;
+        top: 1em;
+        right: 1em;
+    }
 }
