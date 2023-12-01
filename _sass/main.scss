@@ -11,7 +11,7 @@
         --bg: #1B1713;
         --text: #F6F5F3;
         --primary: #4194E6;
-        --secondary: #0D0317;
+        --secondary: #0E3358;
         --accent: #1A73CB;
     }
 }
@@ -27,36 +27,28 @@ body {
     color: var(--text);
     background-color: var(--bg);
 
-    overflow: hidden;
     margin: 0;
 }
 
-.header {
-    position: unset;
-    // transform: translateY(-100%);
-
+header {
     display: flex;
 
-    justify-content: space-between;
-    padding: 1em 1em 1em 1em;
-
-    width: calc(100vw - 9em);
-
-    transition: transform 0.3s linear, height 0.3s linear;
+    padding: 0em 1em 1em 1em;
 }
 
 .title {
     display: flex;
+    align-items: center;
     gap: 1em;
 
     img {
-        width: 4.5em;
-        height: 4.5em;
+        width: 3em;
+        height: 3em;
         border-radius: 1em;
     }
 
     div {
-        font-size: 3em;
+        font-size: 2em;
     }
 }
 
@@ -100,7 +92,7 @@ body {
 .nav-link a {
     text-decoration: none;
 
-    font-size: 2em;
+    font-size: 1.8em;
     font-weight: 100;
 
     color: var(--secondary);
@@ -109,23 +101,6 @@ body {
     color: var(--primary) !important; //I really can't solve this in any other way
 }
 
-.menu-toggler {
-    position: absolute;
-    top: 1em;
-    right: 1em;
-    z-index: 2;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 1.2em;
-}
-.menu-toggler div {
-    width: 4.5em;
-    height: 0.5em;
-
-    background-color: var(--primary);
-}
 
 @media (max-width: 600px) {
     .header {

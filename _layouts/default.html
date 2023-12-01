@@ -5,26 +5,24 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="/assets/css/styles.css" rel="stylesheet">
+        {% if page.url == "/" %}
+            <link href="/assets/css/home.css" rel="stylesheet">
+        {% elif page.url == "/about.html" %}
+            <link href="/assets/css/about.css" rel="stylesheet">
+        {% endif %}
     </head>
 
-    <header">
-        <div class="header">
-            <div class="title">
-                <img src="/assets/images/Hardo-pfp.png" alt="Site picture">
-                <div>Andreas</div>
-            </div>
-            <div class="nav">
-            {% include navigation.html %}
-            </div>
+    <header>
+        <div class="title">
+            <img src="/assets/images/Hardo-pfp.png" alt="Site picture">
+            <div>Andreas</div>
+        </div>
+        <div class="nav">
+        {% include navigation.html %}
         </div>
     </header>
 
     <body>
-        <div class="menu-toggler" onclick="menu()">
-            <div class="menu-line-1"></div>
-            <div class="menu-line-2"></div>
-            <div class="menu-line-3"></div>
-        </div>
         {{ content }}
     </body>
 
