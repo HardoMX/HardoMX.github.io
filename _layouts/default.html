@@ -5,31 +5,32 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="/assets/css/styles.css" rel="stylesheet">
-        {% if page.url == "/" %}
-            <link href="/assets/css/home.css" rel="stylesheet">
-        {% elif page.url == "/about.html" %}
-            <link href="/assets/css/about.css" rel="stylesheet">
-        {% endif %}
     </head>
 
-    <header>
-        <div class="title">
-            <img src="/assets/images/Hardo-pfp.png" alt="Site picture">
-            <div>Andreas</div>
-        </div>
-        <div class="nav">
-        {% include navigation.html %}
-        </div>
-    </header>
+    <body>    
+        <header>
+            <div class="profile">
+                <img src="/assets/images/Hardo-pfp.png" alt="Site picture">
+                <div class="js-menu">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+            <div class="nav">
+            {% include navigation.html %}
+            </div>
+        </header>
 
-    <body>
-        {{ content }}
+        <main>
+            {{ content }}
+        </main>
+
+        <footer>
+            <a href="https://github.hardo.dev">GitHub</a>
+            <a href="#">Contact</a>
+        </footer>
     </body>
-
-<footer>
-        <a href="https://github.hardo.dev">GitHub</a>
-        <a href="#">Contact</a>
-    </footer>
 
     <script src="/assets/js/main.js"></script>
 </html>
