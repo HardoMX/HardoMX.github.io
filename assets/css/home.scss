@@ -6,4 +6,92 @@ main {
     flex-direction: column;
 
     align-items: center;
+
+    h1 {
+        font-size: 7em;
+        color: var(--primary);
+    }
+    h2 {
+        font-size: 5em;
+        font-weight: 100;
+        color: var(--secondary);
+        margin-top: 0;
+    }
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 10em;
+    justify-content: center;
+    margin: 5em 0em 5em 0em;
+}
+.link {
+    display: flex;
+    justify-content: space-between;
+
+    &:nth-child(even) {
+        flex-direction: row-reverse;
+    }
+
+    background-color: var(--secondary);
+
+    /* Semi-responsive, needs some quirks ironed out. And everything needs responsive font-sizes */
+    max-width: 90vw;
+
+    border-radius: 2rem;
+
+    text-decoration: none;
+
+    transition: all 0.5s linear;
+
+    .link-text {
+        text-align: center;
+        padding: 1em 1em 0em 1em;
+        h3 {
+            font-size: 4em;
+            color: var(--primary);
+        }
+        p {
+            font-size: 3em;
+            color: var(--primary);
+        }
+    }
+
+    img {
+        border-top-left-radius: 2rem;
+        border-bottom-left-radius: 2rem;
+        font-size: 2em;
+        height: 40vh;
+        color: var(--primary);
+        filter: blur(0.2rem);
+        transition: all 0.5s linear;
+    }
+
+    &:hover {
+        filter: drop-shadow(0 0 10rem #000000);
+
+        img {
+            filter: blur(0);
+        }
+    }
+}
+
+
+@media (max-width: 834px) {
+    .link {
+        display: grid;
+
+        .link-text {
+            grid-row: 1;
+            grid-column: 1;
+        }
+
+        img {
+            grid-row: 1;
+            grid-column: 1;
+            height: auto;
+            width: 100%;
+        }
+    }
 }

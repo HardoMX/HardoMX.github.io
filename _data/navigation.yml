@@ -9,9 +9,9 @@
 
 - name: Projects
   link: /projects.html
-  description: What projects have I done?
+  description: What have I done?
   class: projects-link
-  image: 
+  image: /assets/images/code-2-3.png
 
 - name: Gallery
   link: /gallery.html
@@ -23,7 +23,7 @@
   link: /posts.html
   description: I write stuff, sometimes
   class: posts-link
-  image: 
+  image: /assets/images/writing.jpg
 
 - name: CV
   link: /cv.html
