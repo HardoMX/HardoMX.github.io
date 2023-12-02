@@ -1,0 +1,17 @@
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    a {
+        font-size: 2em;
+        text-decoration: none;
+        color: var(--secondary);
+
+        transition: color 0.3s ease-in-out;
+
+        &:hover {
+            color: var(--accent)
+        }
+    }
+}

@@ -44,10 +44,6 @@ header {
     border-left: solid 0.05em var(--secondary);
     border-right: solid 0.05em var(--secondary);
 
-    :hover {
-        color: var(--accent);
-    }
-
     ::after {
         content: '';
 
@@ -77,6 +73,12 @@ header {
         font-weight: 100;
 
         color: var(--secondary);
+
+        transition: color 0.3s ease-in-out;
+
+        &:hover {
+            color: var(--accent);
+        }
     }
 }
 .active-page {
@@ -99,9 +101,13 @@ header {
             z-index: 2;
             &:hover {
                 cursor: pointer;
+                div {
+                    background-color: var(--accent);
+                }
             }
-
-            transition: transform 0.5s ease-out;
+            div {
+                transition: transform 0.5s ease-in, opacity 0.3s linear, background-color 0.3s ease-in-out;
+            }
         }
         .menu-active {
             :nth-child(1) {
