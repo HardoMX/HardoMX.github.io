@@ -8,16 +8,17 @@ main {
     align-items: center;
 
     h1 {
-        font-size: 7em;
+        font-size: clamp(2rem, 10vw, 6rem);
         color: var(--primary);
     }
     h2 {
-        font-size: 5em;
+        font-size: clamp(2rem, 12vw, 4rem);
         font-weight: 100;
         color: var(--secondary);
         margin-top: 0;
     }
 }
+
 
 .links {
     display: flex;
@@ -28,7 +29,6 @@ main {
 }
 .link {
     display: flex;
-    justify-content: space-between;
 
     &:nth-child(even) {
         flex-direction: row-reverse;
@@ -36,8 +36,7 @@ main {
 
     background-color: var(--secondary);
 
-    /* Semi-responsive, needs some quirks ironed out. And everything needs responsive font-sizes */
-    max-width: 90vw;
+    max-width: 110ch;
 
     border-radius: 2rem;
 
@@ -46,26 +45,29 @@ main {
     transition: all 0.5s linear;
 
     .link-text {
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         text-align: center;
-        padding: 1em 1em 0em 1em;
         h3 {
-            font-size: 4em;
+            font-size: clamp(2rem, 10vw, 4rem);
             color: var(--primary);
         }
         p {
-            font-size: 3em;
+            font-size: clamp(1.5rem, 10vw, 3rem);
+            max-width: 11ch;
             color: var(--primary);
         }
     }
 
     img {
-        border-top-left-radius: 2rem;
-        border-bottom-left-radius: 2rem;
         font-size: 2em;
-        height: 40vh;
+        max-height: 20em;
         color: var(--primary);
         filter: blur(0.2rem);
         transition: all 0.5s linear;
+        border-radius: 2rem;
     }
 
     &:hover {
@@ -78,13 +80,25 @@ main {
 }
 
 
-@media (max-width: 834px) {
+@media (max-width: 1078px) {
     .link {
         display: grid;
+
+        max-width: 90vw;
 
         .link-text {
             grid-row: 1;
             grid-column: 1;
+
+            padding: 0 0 0 0;
+            z-index: 2;
+
+            h3 {
+                margin: auto;
+            }
+            p {
+                margin: 0;
+            }
         }
 
         img {
@@ -92,6 +106,9 @@ main {
             grid-column: 1;
             height: auto;
             width: 100%;
+            border-top-right-radius: 2rem;
+            border-bottom-right-radius: 2rem;
         }
     }
 }
+
