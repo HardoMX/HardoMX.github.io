@@ -1,6 +1,6 @@
 header {
     display: flex;
-
+    flex-direction: column;
 }
 
 .profile {
@@ -17,39 +17,67 @@ header {
     }
     img {
         border-radius: 1em;
+        visibility: hidden;
     }
     .js-menu {
         display: flex;
         flex-direction: column;
-        visibility: hidden;
-
+        visibility: visible;
+        z-index: 2;
+        &:hover {
+            cursor: pointer;
+            div {
+                background-color: var(--accent);
+            }
+        }
         div {
             width: auto;
             height: 0.3em;
             margin-top: auto;
             margin-bottom: auto;
             background-color: var(--secondary);
+            transition: transform 0.5s ease-in, opacity 0.3s linear, background-color 0.3s ease-in-out;
+        }
+    }
+    .menu-active {
+        :nth-child(1) {
+            transform: translateY(1em) rotate(45deg);
+        }
+        :nth-child(2) {
+            opacity: 0;
+        }
+        :nth-child(3) {
+            transform: translateY(-1em) rotate(-45deg);
         }
     }
 }
 
 .nav {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: max-content;
+    width: 100%;
+
+    transform: translateY(-120%);
+    visibility: collapse;
+
+    transition: all 1s ease-out;
+
+    ul {
+        padding-left: 0;
+    }
+}
+.nav-active {
+    visibility: visible;
+    transform: translateY(0%);
 }
 .nav ul {
     list-style-type: none;
     padding: 0;
 }
 .nav-link {
-    display: inline-block;
+    display: block;
     padding: 0 1em 0 1em;
     position: relative;
 
-    border-left: solid 0.05em var(--secondary);
-    border-right: solid 0.05em var(--secondary);
+    border-bottom: solid 0.05em;
 
     ::after {
         content: '';
@@ -74,10 +102,12 @@ header {
     }
     
     a {
-        text-decoration: none;
+        display: inline-block;
+        width: 100%;
 
-        font-size: 1.8em;
+        font-size: 4em;
         font-weight: 100;
+        text-decoration: none;
 
         color: var(--secondary);
 
@@ -89,81 +119,48 @@ header {
     }
 }
 .active-page {
-    color: var(--primary) !important; //I really can't solve this in any other way
+    color: var(--primary) !important; //I couldn't get the specificity right to override the hover color
 }
 
 
-
 @media (max-width: 834px) {
+    .nav-link {
+        border-image-slice: 1;
+        border-image-source: linear-gradient( to right, var(--primary), var(--secondary));
+    }
+}
+
+
+@media (min-width: 835px) {
     header {
-        flex-direction: column;
+        flex-direction: row;
     }
 
     .profile {
         img {
-            visibility: hidden;
+            visibility: visible;
+            height: clamp(3rem, 5vw, 4rem);
+            width: clamp(3rem, 5vw, 4rem);
         }
         .js-menu {
-            visibility: visible;
-            z-index: 2;
-            &:hover {
-                cursor: pointer;
-                div {
-                    background-color: var(--accent);
-                }
-            }
-            div {
-                transition: transform 0.5s ease-in, opacity 0.3s linear, background-color 0.3s ease-in-out;
-            }
-        }
-        .menu-active {
-            :nth-child(1) {
-                transform: translateY(1em) rotate(45deg);
-            }
-            :nth-child(2) {
-                opacity: 0;
-            }
-            :nth-child(3) {
-                transform: translateY(-1em) rotate(-45deg);
-            }
+            visibility: hidden;
         }
     }
-
     .nav {
-        width: 100%;
-
-        transform: translateY(-120%);
-        visibility: collapse;
-
-        transition: all 1s ease-out;
-
-        ul {
-            padding-left: 0;
-        }
-    }
-    .nav-active {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%) translateY(0%);
         visibility: visible;
-        transform: translateY(0%);
+        width: max-content;
     }
-
-
     .nav-link {
-        display: block;
-        position: relative;
-
-        width: 100%;
-
-        border-left: none;
-        border-right: none;
-        border-bottom: solid 0.05em;
-
-        border-image-slice: 1;
-        border-image-source: linear-gradient( to right, var(--primary), var(--secondary));
+        display: inline-block;
+        border-left: solid 0.05em var(--secondary);
+        border-right: solid 0.05em var(--secondary);
+        border-bottom: none;
 
         a {
-            font-size: 4em;
-            display: inline-block;
-            width: 100%;
+            font-size: clamp(1.75rem, 3vw, 3rem);
         }
     }
 }
