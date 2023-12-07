@@ -36,7 +36,7 @@
             color: var(--primary);
         }
         p {
-            font-size: clamp(1.5rem, 10vw, 3rem);
+            font-size: clamp(1.5rem, 5vw, 3rem);
             max-width: 11ch;
             color: var(--primary);
         }
@@ -45,6 +45,7 @@
     img {
         font-size: 2em;
         max-height: 20em;
+        width: 100%;
         color: var(--primary);
         filter: blur(0.2rem) brightness(75%);
         transition: all 0.5s linear;

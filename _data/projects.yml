@@ -1,4 +1,14 @@
 - name: NeoVim
-  description: Neovim is a loghtweight, open source, code editor
-  link: github.hardo.dev/nvim
-  image: 
+  description: Neovim is a lightweight, open source, code editor
+  link: https://github.hardo.dev/nvim
+  image: /assets/images/nvim.png # Remember to change image
+
+- name: Shells
+  description: A collection of profile and rc files for various shells
+  link: https://github.hardo.dev/shells
+  image: /assets/images/shell.png # Remember to change image
+
+- name: EWW
+  description: My config for EWW menus
+  link: https://github.hardo.dev/eww
+  image: /assets/images/eww.png # Remember to change image

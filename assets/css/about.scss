@@ -1,0 +1,47 @@
+---
+---
+
+sup {
+    font-size: 0.5em;
+    vertical-align: super;
+    line-height: 0;
+}
+
+p {
+    a {
+        text-decoration: underline transparent 0.11em;
+        color: var(--secondary);
+
+        transition: color 0.5s linear, text-decoration-color 0.5s linear;
+
+        &:hover {
+            color: var(--accent);
+            text-decoration: underline var(--accent) 0.11em;
+        }
+    }
+}
+
+.contact-list-item {
+    font-size: clamp(1rem, 5vw, 1.5rem);
+    max-width: 70vw;
+
+    a {
+        text-decoration: underline transparent 0.11em;
+        color: var(--secondary);
+
+        transition: color 0.5s linear, text-decoration-color 0.5s linear;
+
+        &:hover {
+            color: var(--accent);
+            text-decoration: underline var(--accent) 0.11em;
+        }
+    
+    }
+}
+
+.footnote {
+    font-size: clamp(0.5rem, 2vw, 1rem);
+    color: var(--secondary);
+    max-width: 80vw;
+    margin-top: 1em;
+}

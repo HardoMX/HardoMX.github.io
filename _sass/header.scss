@@ -72,6 +72,9 @@ header {
     list-style-type: none;
     padding: 0;
 }
+.active-page {
+    color: var(--primary) !important; //I couldn't get the specificity right to override the hover color
+}
 .nav-link {
     display: block;
     padding: 0 1em 0 1em;
@@ -117,9 +120,6 @@ header {
             color: var(--accent);
         }
     }
-}
-.active-page {
-    color: var(--primary) !important; //I couldn't get the specificity right to override the hover color
 }
 
 

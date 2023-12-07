@@ -1,9 +1,50 @@
 ---
 layout: default
 title: About
+footnotes:
+    - "Gymnasiet is the Swedish equivalent of high school, it starts at age 16 and ends at age 19. (for most people)"
+    - "Yrkeshögskola is a kind of college that focuses on a specific field, like IT or nursing, and a focus on practical work."
+    - "UF is a Swedish program where students start a company for a year, and then close it down. It is a great way to learn about how to run a company, and how to work with others."
 ---
 
+<head>
+    <link rel="stylesheet" href="/assets/css/about.css">
+</head>
+
+
 <h1>About Me</h1>
+
 <h2>Who am I?</h2>
+<p>
+    I am a Swedish student studying IT, focusing on hardware like servers and networking, and software like arduino and web development. 
+    I am currently in my third year in gymnasiet,<sup><a href="#footnote-1">[1]</a></sup> and am planning on going to an yrkeshögskola<sup><a href="#footnote-2">[2]</a></sup>
+    for at least two years, studying either IT or programming.
+</p>
+
 <h2>What do I do?</h2>
+<p>
+    As mentioned I am currently studying full time. On my free time I like to code (see my projects <a href="/projects.html">here</a>),
+    learning new things, playing video games if I have the time, and photography (see the <a href="/gallery.html">gallery</a>
+    and my <a href="https://www.instagram.com/hardomx/">Instagram</a>).
+</p>
+<p>
+    Currently (until May 2024), I am the owner of a company mad through UF.<sup><a href="#footnote-3">[3]</a></sup>
+    Together with some friends, we are currently developing and are going to sell a passive audio mixer that lets
+    you combine different sources to one pair of headphones. Find us at <a href="https://www.hardbergsljud.se">hardbergsljud.se</a>.
+</p>
+
 <h2 id="contact">Get In Contact</h2>
+<p>
+    If you want to contact me, you can do so through one of the following:
+    <ul>
+        <li class="contact-list-item">Private mail: <a href="mailto: andreas.hard@proton.me">andreas.hard@proton.me</a></li>
+        <li class="contact-list-item">School mail: <a href="mailto: andreas.hard@elev.ga.ntig.se">andreas.hard@elev.ga.ntig.se</a></li>
+        <li class="contact-list-item">"Work" mail: <a href="mailto: andreas@hardbergsljud.se">andreas@hardbergsljud.se</a></li>
+    </ul>
+</p>
+
+{% for footnote in page.footnotes %}
+<p class="footnote" id="footnote-{{ forloop.index }}">
+    {{ forloop.index }} - {{ footnote }}
+</p>
+{% endfor %}
