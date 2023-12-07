@@ -2,7 +2,13 @@
 layout: default
 ---
 
-<h1>{{ page.title }}</h1>
-<p>{{ page.date | date_to_string }} - {{ page.tag }}</p>
+<head>
+    <link rel="stylesheet" href="/assets/css/post.css">
+</head>
 
+<h1>{{ page.title }}</h1>
+<h2>{{ page.date | date_to_string }} - {{ page.tag }}</h2>
+
+<div class="content">
 {{ content }}
+</div>

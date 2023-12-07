@@ -1,0 +1,30 @@
+---
+---
+
+.content {
+    width: 90vw;
+    max-width: 70ch;
+    h1 {
+        font-size: clamp(1.5rem, 5vw, 4rem);
+    }
+    h2 {
+        font-size: clamp(1.25rem, 4vw, 3rem);
+    }
+    h3 {
+        font-size: clamp(1rem, 3vw, 2rem);
+    }
+    p {
+        font-size: clamp(0.875rem, 2vw, 1.25rem);
+        code {
+            font-size: 0.85em;
+            padding: 0 0.2em 0 0.2em;
+            background-color: #272822;
+            border-radius: 0.5em;
+        }
+    }
+    strong {
+        font-weight: 400;
+    }
+
+    @import "highlight.scss"
+}

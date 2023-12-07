@@ -65,6 +65,8 @@ PLATFORMS
 
 DEPENDENCIES
   jekyll
+  kramdown
+  rouge
 
 BUNDLED WITH
    2.4.22
