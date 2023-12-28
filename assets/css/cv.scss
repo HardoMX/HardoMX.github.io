@@ -1,2 +1,165 @@
 ---
 ---
+
+.cv {
+    --text: #2B2B2B;
+    --background: #FFFFFF;
+    --accent: #0BACDF;
+
+    margin-top: 5rem;
+    width: 90vw;
+
+    header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+
+        background-color: var(--text);
+
+        svg {
+            height: 100%;
+            max-height: 15rem;
+            stroke: var(--background);
+            stroke-linecap: round;
+            stroke-width: 4px;
+
+            .horizontal {
+                stroke-width: 3px;
+            }
+        }
+
+        .title {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            h1 {
+                margin: 0;
+            }
+            p {
+                width: fit-content;
+                color: var(--background);
+            }
+        }
+
+        .contact {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+
+            .mail {
+                svg {
+                    fill: var(--background);
+                    stroke: transparent;
+                }
+            }
+            .github {
+                svg {
+                    fill: var(--background);
+                    stroke: transparent;
+                }
+            }
+            .site {
+                svg {
+                    fill: transparent;
+                    stroke: var(--background);
+                    stroke-width: 1px;
+                    stroke-miterlimit: 10;
+                    stroke-linecap: round;
+                    stroke-linejoin: round;
+                }
+            }
+            .contact-link {
+                display: flex;
+                align-items: center;
+                svg {
+                    height: 3rem;
+                }
+            }
+        }
+    }
+
+    main {
+        background-color: var(--background);
+        color: var(--text);
+
+        hr {
+            width: 100%;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+
+            svg {
+                height: 100px;
+                fill: var(--background);
+
+                padding: 1rem;
+
+                background-color: var(--accent);
+                border-radius: 100%;
+            }
+
+            h2 {
+                margin: 0;
+            }
+        }
+
+        .section-content {
+            display: flex;
+
+            .lines {
+                .line {
+                    width: 0.2rem;
+                    background-color: var(--accent);
+                }
+                .line-1 {
+                    height: 2rem;
+                }
+                .line-2 {
+                    height: 4rem;
+                }
+
+                .stop {
+                    display: flex;
+                    align-items: center;
+                    justify-content: start;
+                    gap: 1rem;
+
+                    p {
+                        width: fit-content;
+                    }
+                    .circle {
+                        height: 3rem;
+                        width: 3rem;
+                        background-color: var(--accent);
+                        border-radius: 100%;
+                    }
+                }
+            }
+
+            .text {
+                .text-section {
+                    h3 {
+                        margin: 0;
+                    }
+                    p {
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 960px) {
+    .cv {
+        header {
+            flex-direction: row;
+            justify-content: space-around;
+        }
+    }
+}
