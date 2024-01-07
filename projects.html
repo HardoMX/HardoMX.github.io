@@ -1,0 +1,22 @@
+---
+layout: default
+title: Projects
+---
+
+<head>
+    <link rel="stylesheet" href="/assets/css/projects.css">
+</head>
+
+<h1>Projects</h1>
+
+<div class="links">
+    {% for item in site.data.projects %}
+    <a class="{{ item.name | downcase }}-link link" href="{{ item.link }}">
+        <div class="link-text">
+            <h3>{{ item.name }}</h3>
+            <p>{{ item.description }}</p>
+        </div>
+        <img src="{{ item.image }}" alt="{{ item.name }} link">
+    </a>
+    {% endfor %}
+</div>

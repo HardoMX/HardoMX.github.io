@@ -1,0 +1,38 @@
+---
+---
+
+.cv {
+    width: 90vw;
+    max-width: 100ch;
+    height: 90vh;
+
+    margin-top: 5rem;
+}
+
+.download {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 1rem 0;
+    width: 90vw;
+    max-width: 100ch;
+
+    a {
+        text-decoration: none;
+        text-align: center;
+        font-size: 2rem;
+        color: var(--secondary);
+
+        transition: color 0.2s ease-in-out;
+
+        &:hover {
+            color: var(--primary);
+        }
+
+        &:nth-child(2) {
+            border-left: 0.2rem solid var(--secondary);
+            border-right: 0.2rem solid var(--secondary);
+        }
+    }
+}

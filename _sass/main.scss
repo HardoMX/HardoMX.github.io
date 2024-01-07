@@ -1,3 +1,63 @@
-.current {
-  color: green;
+:root {
+    --bg: #ECE8E4;
+    --text: #18120B;
+    --primary: #5D895E;
+    --secondary: #FCE0C5;
+    --accent: #EA7A0B;
 }
+
+@media (prefers-color-scheme: dark){
+    :root {
+        --bg: #1B1713;
+        --text: #F6F5F3;
+        --primary: #1A73CB;
+        --secondary: #0E3358;
+        --accent: #4194E6;
+    }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400;1,500&display=swap');
+
+
+
+body {
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 200;
+
+    color: var(--text);
+    background-color: var(--bg);
+
+    margin: 0;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h1 {
+        font-size: clamp(2rem, 10vw, 6rem);
+        font-weight: 300;
+        color: var(--primary);
+        margin-bottom: 0;
+    }
+    h2 {
+        font-size: clamp(2rem, 12vw, 4rem);
+        font-weight: 200;
+        color: var(--secondary);
+        margin-bottom: 0.5em;
+    }
+    h3 {
+        font-size: clamp(1.5rem, 10vw, 3rem);
+        font-weight: 100;
+    }
+    p {
+        font-size: clamp(1rem, 5vw, 1.5rem);
+        font-weight: 100;
+        width: 90vw;
+        max-width: 70ch;
+        color: var(--text);
+    }
+}
+
+@import "header.scss";
+@import "footer.scss";

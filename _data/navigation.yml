@@ -1,8 +1,32 @@
 - name: Home
   link: /
-- name: Test
-  link: /test.html
-- name: Blog
-  link: /blog.html
-- name: Staff
-  link: /staff.html
+
+- name: About Me
+  link: /about.html
+  description: Who am I?<br>What do I do?<br>Contact Me
+  class: about-link
+  image: /assets/images/Hardo-pfp.png
+
+- name: Projects
+  link: /projects.html
+  description: What have I done in my life?
+  class: projects-link
+  image: /assets/images/code-2-3.png
+
+- name: Gallery
+  link: /gallery.html
+  description: So... I like photography
+  class: gallery-link
+  image: /assets/images/taking-photo.png
+
+- name: Posts
+  link: /posts.html
+  description: I write stuff, sometimes
+  class: posts-link
+  image: /assets/images/writing.jpg
+
+- name: CV
+  link: /cv.html
+  description: I think you can guess what this is
+  class: cv-link
+  image: /assets/images/cv.jpg

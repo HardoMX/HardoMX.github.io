@@ -1,0 +1,31 @@
+---
+---
+
+.gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1vw;
+
+    max-width: 90vw;
+
+    .photo {
+        display: flex;
+        align-items: center;
+        img {
+            width: 100%;
+            height: fit-content;
+        }
+    }
+}
+
+@media (min-width: 600px) {
+    .gallery {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 835px) {
+    .gallery {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
