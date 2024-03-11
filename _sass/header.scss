@@ -95,7 +95,7 @@ header {
         background-color: var(--primary);
 
         transform: scaleX(0);
-        transform-origin: bottom left;
+        transform-origin: bottom right;
 
         transition: transform 0.3s ease-in-out;
     }
