@@ -15,7 +15,7 @@
         flex-direction: row-reverse;
     }
 
-    background-color: var(--secondary);
+    background-color: var(--primary);
 
     max-width: 110ch;
 
@@ -33,12 +33,12 @@
         text-align: center;
         h3 {
             font-size: clamp(2rem, 10vw, 4rem);
-            color: var(--primary);
+            color: var(--text);
         }
         p {
             font-size: clamp(1.5rem, 10vw, 3rem);
             max-width: 11ch;
-            color: var(--primary);
+            color: var(--bg);
         }
     }
 
