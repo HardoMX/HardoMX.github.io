@@ -13,5 +13,10 @@
 
 - Links to projects and the links on the start-page should have `--primary` as background and `--secondary` as header
 
-- Posts-links should be clearly layed out with `DATE`, `CATEGORY`, and `NAME` separated
+- Posts-links should be clearly layed out with `DATE`, `NAME`, and `DESCRIPTION` separated
 - It follows inline-link rules, but also moves sideways and up when hovered
+
+### Buttons
+- No depth, buttons are flat
+- When idle, color is `--secondary`
+- On hover, colors is `--primary`
