@@ -20,7 +20,7 @@ title: Posts
             {% for post in tag[1] %}
             {% if forloop.index <= 5 %}
             <li>
-                <a class="post-entry" href="{{ post.url }}">
+                <a class="post-entry link" href="{{ post.url }}">
                     <div class="post-date">{{ post.date | date_to_string }}</div>
                     <div class="post-title">{{ post.title | upcase }}</div>
                     <div class="post-desc">{{ post.description }}</div>
@@ -34,7 +34,7 @@ title: Posts
             {% for post in tag[1] %}
             {% if forloop.index > 5 %}
             <li>
-                <a class="post-entry" href="{{ post.url }}">
+                <a class="post-entry link" href="{{ post.url }}">
                     <div class="post-date">{{ post.date | date_to_string }}</div>
                     <div class="post-title">{{ post.title | upcase }}</div>
                     <div class="post-desc">{{ post.description }}</div>
@@ -54,7 +54,7 @@ title: Posts
             {% for post in site.posts %}
             {% if forloop.index <= 5 %}
             <li>
-                <a class="post-entry" href="{{ post.url }}">
+                <a class="post-entry link" href="{{ post.url }}">
                     <div class="post-date">{{ post.date | date_to_string }}</div>
                     <div class="post-title">{{ post.title | upcase }}</div>
                     <div class="post-desc">{{ post.description }}</div>
@@ -68,7 +68,7 @@ title: Posts
             {% for post in site.posts %}
             {% if forloop.index > 5 %}
             <li>
-                <a class="post-entry" href="{{ post.url }}">
+                <a class="post-entry link" href="{{ post.url }}">
                     <div class="post-date">{{ post.date | date_to_string }}</div>
                     <div class="post-title">{{ post.title | upcase }}</div>
                     <div class="post-desc">{{ post.description }}</div>
