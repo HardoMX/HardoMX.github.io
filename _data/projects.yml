@@ -4,7 +4,7 @@
   image: /assets/images/nvim.png # Remember to change image
 
 - name: Shells
-  description: A collection of profile and rc files for various shells
+  description: A collection of profile and .rc files for various shells
   link: https://github.hardo.dev/shells
   image: /assets/images/shell.png # Remember to change image
 

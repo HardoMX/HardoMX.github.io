@@ -13,7 +13,7 @@ title: Home
 <div class="links">
     {% for item in site.data.navigation %}
     {% if item.link != "/" %}
-    <a class="{{ item.class }} link" href="{{ item.link }}">
+    <a class="{{ item.class }}" href="{{ item.link }}">
         <div class="{{ item.class }}-text link-text">
             <h3>{{ item.name }}</h3>
             <p>{{ item.description }}</p>

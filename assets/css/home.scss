@@ -7,62 +7,63 @@
     gap: 10em;
     justify-content: center;
     margin-top: 5em;
-}
-.link {
-    display: flex;
 
-    &:nth-child(even) {
-        flex-direction: row-reverse;
-    }
-
-    background-color: var(--primary);
-
-    max-width: 110ch;
-
-    border-radius: 2rem;
-
-    text-decoration: none;
-
-    transition: all 0.5s linear;
-
-    .link-text {
-        margin: auto;
+    a {
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        h3 {
-            font-size: clamp(2rem, 10vw, 4rem);
-            color: var(--text);
-        }
-        p {
-            font-size: clamp(1.5rem, 10vw, 3rem);
-            max-width: 11ch;
-            color: var(--bg);
-        }
-    }
 
-    img {
-        font-size: 2em;
-        max-height: 20em;
-        color: var(--primary);
-        filter: blur(0.2rem) brightness(75%);
-        transition: all 0.5s linear;
+        &:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        background-color: var(--primary);
+
+        max-width: 110ch;
+
         border-radius: 2rem;
-    }
 
-    &:hover {
-        filter: drop-shadow(0 0 10rem #000000);
+        text-decoration: none;
+
+        transition: all 0.5s linear;
+
+        .link-text {
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            h3 {
+                font-size: clamp(2rem, 10vw, 4rem);
+                color: var(--text);
+            }
+            p {
+                font-size: clamp(1.5rem, 10vw, 3rem);
+                max-width: 11ch;
+                color: var(--bg);
+            }
+        }
 
         img {
-            filter: blur(0) brightness(100%);
+            font-size: 2em;
+            max-height: 20em;
+            color: var(--primary);
+            filter: blur(0.2rem) brightness(75%);
+            transition: all 0.5s linear;
+            border-radius: 2rem;
+        }
+
+        &:hover {
+            filter: drop-shadow(0 0 10rem #000000);
+
+            img {
+                filter: blur(0) brightness(100%);
+            }
         }
     }
 }
 
 
 @media (max-width: 1078px) {
-    .link {
+    .links a {
         display: grid;
 
         max-width: 90vw;
@@ -76,9 +77,11 @@
 
             h3 {
                 margin: auto;
+                color: var(--accent);
             }
             p {
                 margin: 0;
+                color: var(--text)
             }
         }
 

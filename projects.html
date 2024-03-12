@@ -11,7 +11,7 @@ title: Projects
 
 <div class="links">
     {% for item in site.data.projects %}
-    <a class="{{ item.name | downcase }}-link link" href="{{ item.link }}">
+    <a class="{{ item.name | downcase }}-link" href="{{ item.link }}" target="_blank">
         <div class="link-text">
             <h3>{{ item.name }}</h3>
             <p>{{ item.description }}</p>
