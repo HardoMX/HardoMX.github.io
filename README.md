@@ -10,9 +10,7 @@
 ### Links
 - In-line links should have a thin, `--primary` colored, line under them
 - When hovered the line should extend uppwards to around halfway up the letters
-
 - Links to projects and the links on the start-page should have `--primary` as background and `--secondary` as header
-
 - Posts-links should be clearly layed out with `DATE`, `NAME`, and `DESCRIPTION` separated
 - It follows inline-link rules, but also moves sideways and up when hovered
 
