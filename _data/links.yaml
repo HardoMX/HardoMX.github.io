@@ -1,0 +1,11 @@
+- name: GitHub
+  link: https://github.com/hardomx
+  icon: /assets/images/github.svg
+
+- name: Signal
+  link: https://signal.me/#eu/_AFR4HgkG4EYwAThBsJPqFv55E4Odiuw5DmBVnf277sS2zwzlAhAz4u-yUz9XLve
+  icon: /assets/images/signal.svg
+
+- name: E-Mail
+  link: mailto:andreas@andreashard.tech
+  icon: /assets/images/mail.svg
