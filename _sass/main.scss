@@ -100,63 +100,6 @@ ul {
   }
 }
 
-.mode-switcher {
-  display: grid;
-  cursor: pointer;
-}
-
-.sun,
-.moon {
-  grid-column: 1;
-  grid-row: 1;
-  height: 4rem;
-  width: 4rem;
-  stroke: var(--primary);
-  transition: stroke 0.3s ease, fill 0.3s ease;
-
-  &:hover {
-    stroke: var(--secondary);
-  }
-}
-
-.moon {
-  fill: var(--primary);
-
-  &:hover {
-    fill: var(--secondary);
-  }
-}
-
-
-.contact {
-  text-decoration: none;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-
-  svg {
-    height: 3rem;
-    width: 3rem;
-    fill: var(--text);
-    stroke: var(--background);
-
-    transition: fill 0.3s ease-out;
-
-    &:hover {
-      fill: var(--secondary);
-    }
-  }
-
-  #mail-icon {
-    stroke: var(--text);
-    fill: var(--background);
-    transition: stroke 0.3s ease-out;
-
-    &:hover {
-      stroke: var(--secondary);
-    }
-  }
-}
 
 .sidebar {
   display: flex;
@@ -172,6 +115,63 @@ ul {
     object-fit: cover;
     object-position: 0 0;
     border-radius: 2rem;
+  }
+
+  .contact {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    svg {
+      height: 3rem;
+      width: 3rem;
+      fill: var(--text);
+      stroke: var(--background);
+
+      transition: fill 0.3s ease-out;
+
+      &:hover {
+        fill: var(--secondary);
+      }
+    }
+
+    #mail-icon {
+      stroke: var(--text);
+      fill: var(--background);
+      transition: stroke 0.3s ease-out;
+
+      &:hover {
+        stroke: var(--secondary);
+      }
+    }
+  }
+
+  .mode-switcher {
+    display: grid;
+    cursor: pointer;
+
+    .sun,
+    .moon {
+      grid-column: 1;
+      grid-row: 1;
+      height: 4rem;
+      width: 4rem;
+      stroke: var(--primary);
+      transition: stroke 0.3s ease, fill 0.3s ease;
+
+      &:hover {
+        stroke: var(--secondary);
+      }
+    }
+
+    .moon {
+      fill: var(--primary);
+
+      &:hover {
+        fill: var(--secondary);
+      }
+    }
   }
 }
 
@@ -208,20 +208,53 @@ ul {
   }
 }
 
+.skills {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  .skills-block {
+    padding: 2rem;
+    background-color: var(--secondary);
+    border-radius: 2rem;
+
+    h3 {
+      margin-top: 0;
+    }
+
+    div {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      gap: 0.5rem;
+
+      img {
+        height: 3rem;
+        background-color: var(--primary);
+        padding: 1rem;
+        border-radius: 1rem;
+      }
+    }
+  }
+}
+
 // Wider screens
 @media (min-width: 835px) {
-  .contact {
-    flex-direction: row;
-    justify-content: space-between;
-    max-width: 13rem;
-  }
-
   .sidebar {
+    position: sticky;
+    top: 5rem;
+    align-self: start;
     margin: 5rem 0 0 5rem;
 
     .profile-picture {
       height: 13rem;
       width: 13rem;
+    }
+
+    .contact {
+      flex-direction: row;
+      justify-content: space-between;
+      max-width: 13rem;
     }
   }
 }
