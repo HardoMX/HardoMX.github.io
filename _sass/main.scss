@@ -200,29 +200,37 @@ ul {
     list-style: none;
 
     li {
-      position: relative;
+      h3 {
+        position: relative;
 
-      &::after {
-        content: ' \25CF';
-        font-size: 5rem;
-        color: var(--primary);
-        position: absolute;
-        left: -3rem;
-        top: -2.5rem;
+        &::before {
+          content: ' \25CF';
+          font-size: 5rem;
+          color: var(--primary);
+          position: absolute;
+          left: -3rem;
+          top: -2.5rem;
+        }
       }
 
-      &::before {
-        content: "";
-        position: absolute;
-        top: 40%;
-        left: -1.5rem;
-        border-left: 1px solid var(--primary);
-        height: 75%;
-        width: 1px;
+      p {
+        position: relative;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: -1.5rem;
+          border-left: 1px solid var(--primary);
+          height: 105%;
+          width: 1px;
+        }
       }
 
-      &:last-child::before {
-        border: none;
+      &:last-child {
+        p::before {
+          border: none;
+        }
       }
     }
   }
