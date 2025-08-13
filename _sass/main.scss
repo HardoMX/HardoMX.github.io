@@ -40,6 +40,7 @@ html[data-theme="dark"] {
 html {
   display: flex;
   justify-content: center;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -63,6 +64,7 @@ main {
 
 h1 {
   font-weight: 300;
+  font-size: 2rem;
   text-align: center;
   margin-bottom: 0;
 }
@@ -297,26 +299,70 @@ ul {
 
 
 .hamburger {
+  all: unset;
+
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+
   display: none;
+
+  flex-direction: column;
+  gap: 0.5rem;
+
+  &:hover {
+    cursor: pointer;
+
+    div {
+      background-color: var(--secondary);
+    }
+  }
+
+  div {
+    width: 3rem;
+    height: 0.5rem;
+    border-radius: 0.5rem;
+
+    background-color: var(--primary);
+    filter: drop-shadow(0.5rem 0.5rem 0.5rem var(--background));
+    transition: transform 0.5s ease-in, opacity 0.3s linear, background-color 0.3s ease-in-out;
+  }
+}
+
+.hamburger-active {
+  :nth-child(1) {
+    transform: translateY(1rem) rotate(45deg);
+  }
+
+  :nth-child(2) {
+    opacity: 0%;
+  }
+
+  :nth-child(3) {
+    transform: translateY(-1rem) rotate(-45deg);
+  }
 }
 
 
-// Wider screens
+// Narrower screens
 @media (max-width: 800px) {
   body {
     grid-template-columns: 1fr;
   }
 
   main {
-    margin: 0 2rem 0 2rem;
+    margin: 1rem 2rem 0 2rem;
   }
 
   .sidebar {
     align-self: normal;
     margin: 0;
+    padding: 2.5rem 2rem 0 2rem;
     display: none;
     z-index: 2;
-    top: 2rem;
+    top: -0.5rem;
+    background-color: var(--background);
+    height: 100vh;
 
     .profile-picture {
       height: 10rem;
@@ -328,7 +374,12 @@ ul {
     }
   }
 
+  .sidebar-active {
+    display: flex;
+  }
+
   .hamburger {
-    display: initial;
+    display: flex;
+    z-index: 3;
   }
 }

@@ -37,3 +37,33 @@ function modeSwitch() {
         localStorage.setItem('theme', 'dark');
     }
 }
+
+
+
+// Menu button
+var menu = document.querySelector(".hamburger");
+var sidebar = document.querySelector(".sidebar");
+var expanded = false;
+
+function toggleMenu() {
+    menu.classList.toggle("hamburger-active");
+    expanded = !expanded;
+    menu.setAttribute("aria-expanded", expanded);
+    sidebar.classList.toggle("sidebar-active");
+}
+
+
+
+// Close menu when nav menu is clicked
+var navLinks = document.querySelectorAll(".navigation");
+
+navLinks.forEach(link => {
+    link.addEventListener("click", closeMenu)
+});
+
+function closeMenu() {
+    if (window.innerWidth < 800) {
+        toggleMenu();
+        console.log("woo");
+    }
+}
