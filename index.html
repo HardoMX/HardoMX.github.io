@@ -1,25 +1,171 @@
 ---
-layout: default
-title: Home
+title: Andreas Hård
 ---
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>{{ page.title }}</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/assets/css/home.css">
+    </head>
 
-<head>
-    <link rel="stylesheet" href="/assets/css/home.css">
-</head>
+    <body>
+        <button class="hamburger" aria-expanded="false" aria-controls="sidebar" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </button>
+        <aside class="sidebar" id="sidebar">
+            <img class="profile-picture" src="/assets/images/me.jpg" alt="me"/>
+            <h1>Andreas Hård</h1>
+            <nav>
+                <ul>
+                    <li><a class="navigation link" href="#about">About</a></li>
+                    <li><a class="navigation link" href="#exp">Experience</a></li>
+                    <li><a class="navigation link" href="#edu">Education</a></li>
+                    <li><a class="navigation link" href="#skills">Skills</a></li>
+                    <li><a class="navigation link" href="#cert">Certificates</a></li>
+                    <li><a class="navigation link" href="#proj">Projects</a></li>
+                </ul>
+            </nav>
+            <div class="contact">
+                {% for item in site.data.links %}
+                <a href="{{ item.link }}" target="_blank">
+                    {{ item.icon }}
+                </a>
+                {% endfor %}
+            </div>
+            <div class="mode-switcher" onclick="modeSwitch()">
+                <svg class="sun" id="sun" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M7.28451 10.3333C7.10026 10.8546 7 11.4156 7 12C7 14.7614 9.23858 17 12 17C14.7614 17 17 14.7614 17 12C17 9.23858 14.7614 7 12 7C11.4156 7 10.8546 7.10026 10.3333 7.28451"
+                        stroke-width="1.5" stroke-linecap="round" />
+                    <path d="M12 2V4" stroke-width="1.5" stroke-linecap="round" />
+                    <path d="M12 20V22" stroke-width="1.5" stroke-linecap="round" />
+                    <path d="M4 12L2 12" stroke-width="1.5" stroke-linecap="round" />
+                    <path d="M22 12L20 12" stroke-width="1.5" stroke-linecap="round" />
+                    <path d="M19.7778 4.22266L17.5558 6.25424" stroke-width="1.5" stroke-linecap="round" />
+                    <path d="M4.22217 4.22266L6.44418 6.25424" stroke-width="1.5" stroke-linecap="round" />
+                    <path d="M6.44434 17.5557L4.22211 19.7779" stroke-width="1.5" stroke-linecap="round" />
+                    <path d="M19.7778 19.7773L17.5558 17.5551" stroke-width="1.5" stroke-linecap="round" />
+                </svg>
+                <svg class="moon" id="moon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M21.0672 11.8568L20.4253 11.469L21.0672 11.8568ZM12.1432 2.93276L11.7553 2.29085V2.29085L12.1432 2.93276ZM7.37554 20.013C7.017 19.8056 6.5582 19.9281 6.3508 20.2866C6.14339 20.6452 6.26591 21.104 6.62446 21.3114L7.37554 20.013ZM2.68862 17.3755C2.89602 17.7341 3.35482 17.8566 3.71337 17.6492C4.07191 17.4418 4.19443 16.983 3.98703 16.6245L2.68862 17.3755ZM21.25 12C21.25 17.1086 17.1086 21.25 12 21.25V22.75C17.9371 22.75 22.75 17.9371 22.75 12H21.25ZM2.75 12C2.75 6.89137 6.89137 2.75 12 2.75V1.25C6.06294 1.25 1.25 6.06294 1.25 12H2.75ZM15.5 14.25C12.3244 14.25 9.75 11.6756 9.75 8.5H8.25C8.25 12.5041 11.4959 15.75 15.5 15.75V14.25ZM20.4253 11.469C19.4172 13.1373 17.5882 14.25 15.5 14.25V15.75C18.1349 15.75 20.4407 14.3439 21.7092 12.2447L20.4253 11.469ZM9.75 8.5C9.75 6.41182 10.8627 4.5828 12.531 3.57467L11.7553 2.29085C9.65609 3.5593 8.25 5.86509 8.25 8.5H9.75ZM12 2.75C11.9115 2.75 11.8077 2.71008 11.7324 2.63168C11.6686 2.56527 11.6538 2.50244 11.6503 2.47703C11.6461 2.44587 11.6482 2.35557 11.7553 2.29085L12.531 3.57467C13.0342 3.27065 13.196 2.71398 13.1368 2.27627C13.0754 1.82126 12.7166 1.25 12 1.25V2.75ZM21.7092 12.2447C21.6444 12.3518 21.5541 12.3539 21.523 12.3497C21.4976 12.3462 21.4347 12.3314 21.3683 12.2676C21.2899 12.1923 21.25 12.0885 21.25 12H22.75C22.75 11.2834 22.1787 10.9246 21.7237 10.8632C21.286 10.804 20.7293 10.9658 20.4253 11.469L21.7092 12.2447ZM12 21.25C10.3139 21.25 8.73533 20.7996 7.37554 20.013L6.62446 21.3114C8.2064 22.2265 10.0432 22.75 12 22.75V21.25ZM3.98703 16.6245C3.20043 15.2647 2.75 13.6861 2.75 12H1.25C1.25 13.9568 1.77351 15.7936 2.68862 17.3755L3.98703 16.6245Z"
+                    />
+                </svg>
+            </div>
+        </aside>
 
-<h1>Andreas Hård</h1>
-<h2>Portfolio</h2>
+        <main>
+            <div id="about">
+                <h2>About</h2>
+                <p>I am Andreas, I am currently studying DevOps at Lernia Yrkeshögskola. I have previously had internships at Epiroc Drills and ITSY, where I’ve learnt about everything from large scale software development, to helpdesk support and IT consulting, to cybersecurity. In my spare time I like coding, experimenting with my homelab, and gaming.</p>
+            </div>
 
-<div class="links">
-    {% for item in site.data.navigation %}
-    {% if item.link != "/" %}
-    <a class="{{ item.class }} link" href="{{ item.link }}">
-        <div class="{{ item.class }}-text link-text">
-            <h3>{{ item.name }}</h3>
-            <p>{{ item.description }}</p>
-        </div>
-        <img src="{{ item.image }}" alt="Link to {{ item.name }}">
-    </a>
-    {% endif %}
-    {% endfor %}
-</div>
+            <div class="list" id="exp">
+                <h2>Experience</h2>
+                <ul>
+                    <li>
+                        <h3><a class="link" href="https://itsy.se/" target="_blank">ITSY</a></h3>
+                        <p>ITSY is a IT consulting company based in Örebro. At ITSY I spent time with helpdesk, IT consultants, and security specialists. I did routine tasks like installing computers, troubleshooting, and setting up network equipment. I also managed the installation and delivery of over 80 laptops to a client during my time at ITSY.</p>
+                    </li>
+                    <li>
+                        <h3><a class="link" href="https://www.epiroc.com/" target="_blank">Epiroc</a></h3>
+                        <p>Epiroc is a large Swedish mining-machine manufacturer. At Epiroc I shadowed developers working on different systems of the ST and MT series of mining machines. I also handled the recovery and upgrade of a test server where GRUB was corrupted by a botched snapshot recovery.</p>
+                    </li>
+                    <li>
+                        <h3><a class="link" href="https://framnas.squarespace.com/" target="_blank">Framnäs</a></h3>
+                        <p>Framnäs is a small-scale lodging that has a kitchen and communal eating area, with several houses with apartments spread out over an area. At Framnäs I've worked both in the kitchen and with cleaning. I have managed shifts in the kitchen, making sure meals are made on time, and that the kitchen and eating area is kept clean.</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="list" id="edu">
+                <h2>Education</h2>
+                <ul class="list">
+                    <li>
+                        <h3><a class="link" href="https://www.lernia.se/utbildning/yrkeshogskoleutbildning/devops-engineer/" target="_blank">Lernia YH</a></h3>
+                        <p>At Lernia I study to become a DevOps engineer. The education covers the basics and intermediate knowledge of several areas, from project management, to cloud and databases, to containers and CI/CD. I focus on the automation side of things, studying extra on CI/CD, cloud, and linux in my free time.</p>
+                    </li>
+                    <li>
+                        <h3><a class="link" href="https://ntigymnasiet.se/orebro/" target="_blank">NTI Gymnasiet</a></h3>
+                        <p>At NTI I studied IT. I learned a lot on both the hardware and software side of things, taking several certificates in networking, windows, security, and development. My final programming project was <a class="link" href="https://github.com/HardoMX/HomeLabHub" target="_blank">HomeLabHub</a>, a simple homelab dashboard, and my examination project was trying to build a drone.<p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="skills" id="skills">
+                <h2>Skills</h2>
+
+                <div class="skills-block">
+                    <h3>Languages</h3>
+                    <div>
+                        <img title="Python - comfortable" src="https://abrudz.github.io/logos/Python.svg" alt="Python">
+                        <img title="HTML - proficient" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Badge.svg/1024px-HTML5_Badge.svg.png" alt="HTML">
+                        <img title="CSS - proficient" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/CSS3_logo.svg/768px-CSS3_logo.svg.png?20210705212817" alt="CSS">
+                        <img title="Bash - comfortable" src="https://raw.githubusercontent.com/gilbarbara/logos/92bb74e98bca1ea1ad794442676ebc4e75038adc/logos/bash-icon.svg" alt="Bash">
+                        <img title="Lua - basics" src="https://abrudz.github.io/logos/Lua.svg" alt="Lua">
+                        <img title="JavaScript - basics" src="https://abrudz.github.io/logos/JS.svg" alt="JS">
+                        <img title="Golang - newbie" src="https://abrudz.github.io/logos/Go.svg" alt="Go">
+                    </div>
+                </div>
+
+                <div class="skills-block">
+                    <h3>Technologies</h3>
+                    <div>
+                        <img title="Figma - comfortable" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Figma-logo.svg/960px-Figma-logo.svg.png?20190122211436" alt="Figma">
+                        <img title="Docker - basics" src="https://www.svgrepo.com/show/353659/docker-icon.svg" alt="Docker">
+                        <img title="Git - comfortable" src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.svg" alt="Git">
+                        <img title="Linux - comfortable" src="https://www.svgrepo.com/show/448236/linux.svg" alt="Linux">
+                        <img title="NeoVim - proficient" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Neovim-mark.svg/738px-Neovim-mark.svg.png?20150131093814" alt="NeoVim">
+                        <img title="GitHub - proficient" src="https://raw.githubusercontent.com/gilbarbara/logos/92bb74e98bca1ea1ad794442676ebc4e75038adc/logos/github-icon.svg" alt="GitHub">
+                    </div>
+                </div>
+            </div>
+
+            <div id="cert">
+                <h2>Certificates</h2>
+                <p>Find all my certificates on <a class="link" href="https://www.credly.com/users/andreas-hard" target="_blank">Credly</a>.</p>
+                <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="391ef816-e4df-46d5-81d0-d4525184f684" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+                <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="3212e490-44ed-4f94-aad7-96d808828d62" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+                <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="26573611-3525-4363-96d1-8edb9e4aab3a" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+                <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="e125c602-2faf-4e93-b83d-c26e7eddc1c0" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+            </div>
+
+            <div class="list" id="proj">
+                <h2>Projects</h2>
+                <ul>
+                    <li class="project">
+                        <h3>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Neovim-mark.svg/738px-Neovim-mark.svg.png?20150131093814" alt="NeoVim">
+                            <a class="link" href="https://github.com/hardomx/nvim" target="_blank">NeoVim</a>
+                        </h3>
+                        <p>NeoVim as a code editor that aims to fix, improve, and extend Vim. It is my main code editor and this project is my own config of it. Since I use NeoVim frequently, the config is "alive" and I am always working to improve it.</p>
+                    </li>
+                    <li class="project">
+                        <h3>
+                            <img src="https://raw.githubusercontent.com/HardoMX/modbot/refs/heads/main/assets/modbot.png" alt="modbot">
+                            <a class="link" href="https://github.com/hardomx/modbot">modbot</a>
+                        </h3>
+                        <p>Modbot is a simple bot for discord made in python using <a class="link" href="https://discordpy.readthedocs.io/">Discord.py</a>. I started working on modbot as a school assignment for a course in cloud computing, thus my focus was mostly on working with containers and making the app work in Azure. I'm no longer working much on the bot, but that might change in the future, and if not I still learnt a lot about working with containers and secrets in Azure from the project.</p>
+                    </li>
+                    <li class="project">
+                        <h3>
+                            <img src="/assets/images/sites.svg" alt="Websites">
+                            Websites
+                        </h3>
+                        <p>I have worked with different people and organizations to help them create websites; <a class="link" href="https://www.mtelservice.se/" target="_blank">MT-Elservice</a> is a small electrician company, with the website I made they have noticed a markant increase in calls and jobs. The site is written in plain HTML, CSS, and JS, and hosted using github pages. <br><br> <a class="link" href="https://www.projektlazarus.se/" target="_blank">Projekt Lazarus</a> is a LARPing group whom I helped update their site. Their previous site was made using WordPress, so to keep upkeep easy on their part I decided to keep WordPress, but change the theme, pages, and overall design language.<p>
+                    </li>
+                    <li class="project">
+                        <h3>More</h3>
+                        <p>Find more projects on my <a class="link" href="https://github.com/HardoMX?tab=repositories" target="_blank">GitHub</a>.</p>
+                    </li>
+                </ul>
+            </div>
+        </main>
+    </body>
+
+    <script src="assets/js/main.js"></script>
+</html>
