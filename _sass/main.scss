@@ -382,4 +382,12 @@ ul {
     display: flex;
     z-index: 3;
   }
+
+  .skills {
+    .skills-block {
+      div {
+        justify-content: space-evenly;
+      }
+    }
+  }
 }

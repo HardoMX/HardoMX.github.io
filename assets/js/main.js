@@ -52,6 +52,10 @@ function toggleMenu() {
     sidebar.classList.toggle("sidebar-active");
 }
 
+if (window.innerWidth > 800) {
+    menu.setAttribute("aria-expanded", true)
+}
+
 
 
 // Close menu when nav menu is clicked
